@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoorTaaj Village — Cuisine Indienne Authentique | Kinshasa</title>
+<meta name="description" content="NoorTaaj Village, restaurant indien à Kinshasa, face au CMK Hospital. Plus de 200 plats : biryanis, currys, tandoor, sucreries indiennes. Commandez sur WhatsApp.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%9B%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+    :root {
+        --cream: #FBF6EC;
+        --cream-dark: #F0E8D8;
+        --ink: #1A1812;
+        --ink-soft: #3A352B;
+        --orange: #F4762A;
+        --orange-dark: #DC5F18;
+        --gold: #C9A84C;
+        --green: #5C7A47;
+        --red: #D23B3B;
+        --white: #FFFFFF;
+        --text-light: #756E60;
+        --shadow: 0 20px 50px rgba(26,24,18,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        color: var(--ink-soft);
+        background: var(--cream);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: var(--ink); }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 5%; }
+
+    /* ===== Buttons ===== */
+    .btn-pill {
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 16px 34px; border-radius: 50px;
+        font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem;
+        text-decoration: none; border: 2px solid transparent; cursor: pointer;
+        transition: all 0.3s ease; white-space: nowrap;
+    }
+    .btn-pill.primary { background: var(--orange); color: var(--white); box-shadow: 0 12px 30px rgba(244,118,42,0.35); }
+    .btn-pill.primary:hover { background: var(--orange-dark); transform: translateY(-3px); box-shadow: 0 16px 36px rgba(244,118,42,0.45); }
+    .btn-pill.outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+    .btn-pill.outline:hover { background: var(--ink); color: var(--white); transform: translateY(-3px); }
+    .btn-pill.small { padding: 10px 22px; font-size: 0.82rem; }
+    .btn-pill.ghost-light { background: rgba(255,255,255,0.12); color: var(--white); border-color: rgba(255,255,255,0.5); }
+    .btn-pill.ghost-light:hover { background: var(--white); color: var(--ink); }
+
+    /* ===== Nav ===== */
+    nav.navbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+        padding: 22px 5%; display: flex; align-items: center; justify-content: space-between;
+        transition: all 0.35s ease;
+    }
+    nav.navbar.scrolled { background: rgba(251,246,236,0.92); backdrop-filter: blur(14px); padding: 14px 5%; box-shadow: 0 8px 30px rgba(26,24,18,0.08); }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .logo-text { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--ink); line-height: 1.1; }
+    .logo-text span { display: block; font-weight: 500; font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: 0.95rem; position: relative; transition: color 0.3s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--orange); transition: width 0.3s; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta { display: flex; align-items: center; gap: 14px; }
+    .lang-switch { display: flex; background: var(--white); border-radius: 50px; padding: 4px; box-shadow: var(--shadow); }
+    .lang-switch button {
+        border: none; background: transparent; padding: 6px 13px; border-radius: 50px;
+        font-family: 'Poppins'; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.5px;
+        color: var(--text-light); cursor: pointer; transition: all 0.25s;
+    }
+    .lang-switch button.active { background: var(--ink); color: var(--white); }
+    .mobile-menu-btn { display: none; font-size: 1.4rem; color: var(--ink); cursor: pointer; }
+
+    /* ===== Hero ===== */
+    .hero {
+        min-height: 100vh; display: flex; align-items: center; padding: 150px 5% 60px;
+        position: relative; overflow: hidden;
+        background: radial-gradient(circle at 85% 15%, rgba(244,118,42,0.10) 0%, transparent 45%),
+                    radial-gradient(circle at 5% 90%, rgba(92,122,71,0.10) 0%, transparent 40%),
+                    var(--cream);
+    }
+    .hero-inner { max-width: 1240px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 50px; align-items: center; }
+    .badge-pill {
+        display: inline-flex; align-items: center; gap: 8px; background: var(--white);
+        border: 1px solid rgba(201,168,76,0.4); padding: 8px 20px; border-radius: 50px;
+        font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+        color: var(--orange-dark); margin-bottom: 28px; box-shadow: var(--shadow); animation: fadeInDown 0.8s ease;
+    }
+    .badge-pill i { color: var(--gold); }
+    .hero h1 { font-size: clamp(2.6rem, 5.4vw, 4.6rem); font-weight: 900; line-height: 1.05; margin-bottom: 22px; animation: fadeInUp 0.8s ease 0.1s both; }
+    .hero h1 .accent { color: var(--orange); }
+    .hero-desc { font-size: 1.08rem; color: var(--text-light); max-width: 480px; margin-bottom: 18px; animation: fadeInUp 0.8s ease 0.2s both; }
+    .hero-location { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 36px; animation: fadeInUp 0.8s ease 0.3s both; }
+    .hero-location i { color: var(--orange); }
+    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 46px; animation: fadeInUp 0.8s ease 0.4s both; }
+    .hero-stats { display: flex; gap: 36px; flex-wrap: wrap; animation: fadeInUp 0.8s ease 0.5s both; }
+    .hero-stat strong { display: block; font-family: 'Poppins', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--ink); }
+    .hero-stat span { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+    .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; height: 520px; }
+    .hero-blob { position: absolute; width: 420px; height: 420px; background: linear-gradient(135deg, var(--orange) 0%, var(--gold) 100%); opacity: 0.18; border-radius: 48% 52% 60% 40% / 50% 45% 55% 50%; filter: blur(2px); animation: blobMove 9s ease-in-out infinite; }
+    .hero-ring { position: absolute; width: 400px; height: 400px; border: 2px dashed rgba(201,168,76,0.45); border-radius: 50%; animation: spin 30s linear infinite; }
+    .hero-photo-wrap { position: relative; width: 340px; height: 340px; border-radius: 50%; overflow: hidden; border: 10px solid var(--white); box-shadow: 0 30px 60px rgba(26,24,18,0.2); animation: floatY 5s ease-in-out infinite; }
+    .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .floating-leaf { position: absolute; color: var(--green); opacity: 0.4; font-size: 2.2rem; }
+    .leaf-1 { top: 6%; left: 2%; animation: spinSlow 14s linear infinite; }
+    .leaf-2 { bottom: 10%; right: 0%; font-size: 1.6rem; color: var(--orange); opacity: 0.5; animation: spinSlow 11s linear infinite reverse; }
+    .floating-card { position: absolute; bottom: 18px; left: -10px; background: var(--white); padding: 16px 22px; border-radius: 18px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 12px; animation: floatY 5s ease-in-out infinite 0.3s; }
+    .floating-card .ring { width: 44px; height: 44px; border-radius: 50%; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; color: var(--gold); font-weight: 800; font-size: 0.95rem; }
+    .floating-card strong { display: block; font-family: 'Poppins'; font-size: 0.95rem; color: var(--ink); }
+    .floating-card span { font-size: 0.75rem; color: var(--text-light); }
+    .floating-pin { position: absolute; top: 8%; right: -4%; background: var(--ink); color: var(--white); padding: 10px 18px; border-radius: 14px; font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow); animation: floatY 5s ease-in-out infinite 0.6s; }
+    .floating-pin i { color: var(--orange); }
+
+    /* ===== Marquee ===== */
+    .marquee { background: var(--ink); color: var(--cream); padding: 16px 0; overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; animation: marquee 26s linear infinite; }
+    .marquee-track span { display: inline-flex; align-items: center; gap: 12px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase; padding: 0 30px; }
+    .marquee-track span i { color: var(--orange); }
+
+    /* ===== Section generic ===== */
+    section { padding: 100px 5%; }
+    .section-header { margin-bottom: 56px; }
+    .section-header.center { text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--orange-dark); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+    .eyebrow::before { content: ''; width: 26px; height: 2px; background: var(--orange); display: inline-block; }
+    .section-header h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); font-weight: 800; }
+    .section-header p { color: var(--text-light); max-width: 560px; margin-top: 14px; }
+    .section-header.center p { margin-left: auto; margin-right: auto; }
+
+    /* ===== Stats strip ===== */
+    .stats-strip { background: var(--cream-dark); padding: 50px 5%; }
+    .stats-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+    .stat-box strong { display: block; font-family: 'Poppins'; font-weight: 800; font-size: 2.4rem; color: var(--ink); }
+    .stat-box span { font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* ===== Popular dishes ===== */
+    .popular { background: var(--cream); }
+    .dish-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; max-width: 1280px; margin: 0 auto; }
+    .dish-card { background: var(--white); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.35s ease, box-shadow 0.35s ease; }
+    .dish-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(26,24,18,0.16); }
+    .dish-card-img { position: relative; height: 160px; overflow: hidden; }
+    .dish-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .dish-card:hover .dish-card-img img { transform: scale(1.08); }
+    .dish-tag { position: absolute; top: 12px; left: 12px; background: var(--orange); color: var(--white); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 5px 11px; border-radius: 50px; }
+    .dish-card-body { padding: 18px; }
+    .dish-card-body h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .dish-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; color: var(--text-light); margin-bottom: 14px; }
+    .dish-meta .stars { color: var(--gold); }
+    .dish-footer { display: flex; justify-content: space-between; align-items: center; }
+    .dish-price { font-family: 'Poppins'; font-weight: 800; color: var(--ink); font-size: 0.95rem; }
+    .order-link { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--cream); font-size: 0.75rem; font-weight: 600; padding: 8px 14px; border-radius: 50px; text-decoration: none; transition: all 0.3s; }
+    .order-link:hover { background: var(--orange); color: var(--white); }
+
+    /* ===== About ===== */
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 70px; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .about-image-wrap { position: relative; }
+    .about-image { width: 100%; max-width: 380px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 10px solid var(--cream); box-shadow: var(--shadow); margin: 0 auto; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; }
+    .about-badge { position: absolute; bottom: 10px; right: 10%; background: var(--ink); color: var(--white); padding: 20px 26px; border-radius: 18px; text-align: center; box-shadow: var(--shadow); }
+    .about-badge .number { font-family: 'Poppins'; font-size: 2rem; font-weight: 800; color: var(--orange); display: block; }
+    .about-badge .text { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.75); }
+    .about-content p { color: var(--text-light); margin-bottom: 18px; }
+    .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 28px 0 32px; }
+    .feature-item { display: flex; align-items: center; gap: 12px; background: var(--cream); padding: 14px 16px; border-radius: 14px; font-weight: 600; font-size: 0.9rem; color: var(--ink); }
+    .feature-item i { color: var(--orange); font-size: 1.1rem; width: 22px; }
+
+    /* ===== Menu ===== */
+    .menu-section { background: var(--cream-dark); }
+    .menu-search { max-width: 480px; margin: 0 auto 30px; position: relative; }
+    .menu-search input { width: 100%; padding: 14px 22px 14px 46px; border-radius: 50px; border: none; font-family: 'Inter'; font-size: 0.92rem; background: var(--white); box-shadow: var(--shadow); }
+    .menu-search input:focus { outline: 2px solid var(--orange); }
+    .menu-search i { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-light); }
+
+    .menu-tabs-wrap { display: flex; align-items: center; gap: 10px; max-width: 1200px; margin: 0 auto 30px; position: relative; }
+    .menu-tabs-toggle { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--white); border: none; cursor: pointer; font-size: 1rem; }
+    .menu-tabs { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding: 4px 2px; }
+    .menu-tabs::-webkit-scrollbar { display: none; }
+    .menu-tab { flex-shrink: 0; padding: 11px 22px; background: var(--white); border: none; border-radius: 50px; color: var(--ink-soft); font-family: 'Poppins'; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+    .menu-tab.active, .menu-tab:hover { background: var(--orange); color: var(--white); }
+    .menu-tabs-dropdown { display: none; position: absolute; top: 56px; left: 56px; right: 0; background: var(--white); border-radius: 18px; box-shadow: var(--shadow); padding: 14px; z-index: 50; max-height: 360px; overflow-y: auto; }
+    .menu-tabs-dropdown.open { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .menu-tabs-dropdown button { text-align: left; border: none; background: transparent; padding: 10px 14px; border-radius: 10px; font-family: 'Inter'; font-size: 0.85rem; color: var(--ink-soft); cursor: pointer; }
+    .menu-tabs-dropdown button:hover, .menu-tabs-dropdown button.active { background: var(--cream-dark); color: var(--orange-dark); font-weight: 600; }
+
+    .menu-banner { position: relative; border-radius: 24px; overflow: hidden; height: 220px; margin-bottom: 40px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .menu-banner img { width: 100%; height: 100%; object-fit: cover; }
+    .menu-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(26,24,18,0.78) 0%, rgba(26,24,18,0.15) 70%); }
+    .menu-banner-text { position: absolute; left: 40px; top: 50%; transform: translateY(-50%); color: var(--white); max-width: 460px; }
+    .menu-banner-text h3 { color: var(--white); font-size: 1.8rem; margin-bottom: 8px; }
+    .menu-banner-text p { color: rgba(255,255,255,0.85); font-size: 0.92rem; }
+    .menu-banner-count { display: inline-block; margin-top: 10px; background: var(--orange); padding: 4px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+    .menu-card { background: var(--white); border-radius: 16px; padding: 20px 22px; transition: all 0.3s; box-shadow: 0 4px 18px rgba(26,24,18,0.05); }
+    .menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .menu-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+    .menu-card h4 { font-size: 0.98rem; font-weight: 600; }
+    .menu-card .price { color: var(--orange-dark); font-weight: 700; font-family: 'Poppins'; font-size: 0.85rem; white-space: nowrap; }
+    .menu-card-footer { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .menu-card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .badge { display: inline-block; padding: 4px 11px; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 50px; font-weight: 700; }
+    .badge-spicy { background: rgba(210,59,59,0.1); color: var(--red); }
+    .badge-veg { background: rgba(92,122,71,0.12); color: var(--green); }
+    .badge-popular { background: rgba(244,118,42,0.12); color: var(--orange-dark); }
+    .no-results { text-align: center; color: var(--text-light); padding: 40px; grid-column: 1 / -1; }
+
+    /* ===== Gallery ===== */
+    .gallery { background: var(--white); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1200px; margin: 0 auto; }
+    .gallery-item { position: relative; overflow: hidden; aspect-ratio: 1; cursor: pointer; border-radius: 20px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item .overlay { position: absolute; inset: 0; background: rgba(26,24,18,0.55); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; color: var(--orange); font-size: 1.7rem; }
+    .gallery-item:hover .overlay { opacity: 1; }
+    .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
+    .gallery-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
+
+    /* ===== Services ===== */
+    .services { background: var(--cream); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; max-width: 1200px; margin: 0 auto; }
+    .service-card { background: var(--white); text-align: center; padding: 46px 28px; border-radius: 20px; transition: all 0.3s; }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow); }
+    .service-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(244,118,42,0.12); color: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 22px; }
+    .service-card h4 { font-size: 1.1rem; margin-bottom: 12px; }
+    .service-card p { color: var(--text-light); font-size: 0.9rem; }
+
+    /* ===== Testimonials ===== */
+    .testimonials { background: var(--cream-dark); }
+    .testimonials-track { overflow: hidden; max-width: 100%; mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+    .testimonials-scroll { display: inline-flex; gap: 26px; animation: testiScroll 70s linear infinite; }
+    .testimonials-track:hover .testimonials-scroll { animation-play-state: paused; }
+    .testimonial-card { flex-shrink: 0; width: 340px; background: var(--white); padding: 32px; border-radius: 20px; position: relative; }
+    .testimonial-card .quote-mark { font-family: 'Poppins'; font-size: 3.5rem; color: var(--orange); opacity: 0.15; position: absolute; top: 14px; right: 24px; line-height: 1; }
+    .stars { color: var(--gold); margin-bottom: 14px; font-size: 0.9rem; }
+    .testimonial-card p.quote { color: var(--ink-soft); font-style: italic; margin-bottom: 22px; font-size: 0.92rem; min-height: 95px; }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; }
+    .testimonial-author img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .testimonial-author h5 { font-size: 0.95rem; color: var(--ink); }
+    .testimonial-author span { font-size: 0.78rem; color: var(--text-light); }
+    @keyframes testiScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ===== Contact ===== */
+    .contact-section { background: var(--white); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; align-items: stretch; }
+    .info-item { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 26px; }
+    .info-icon { width: 46px; height: 46px; border-radius: 14px; background: var(--cream); color: var(--orange); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.05rem; }
+    .info-item h4 { font-size: 1rem; margin-bottom: 4px; }
+    .info-item p, .info-item a { color: var(--text-light); text-decoration: none; font-size: 0.95rem; }
+    .info-item a:hover { color: var(--orange); }
+    .info-item a.maps-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-weight: 600; color: var(--orange-dark); }
+    .info-item a.maps-link:hover { color: var(--orange); }
+    .hours-table { width: 100%; margin-top: 6px; }
+    .hours-table tr { border-bottom: 1px solid var(--cream-dark); }
+    .hours-table td { padding: 8px 0; color: var(--text-light); font-size: 0.9rem; }
+    .hours-table td:last-child { text-align: right; color: var(--orange-dark); font-weight: 600; }
+    .map-container { border-radius: 24px; overflow: hidden; min-height: 380px; box-shadow: var(--shadow); }
+    .map-container iframe { width: 100%; height: 100%; min-height: 380px; border: none; }
+
+    /* ===== CTA ===== */
+    .cta { position: relative; text-align: center; padding: 120px 5%; background: linear-gradient(135deg, rgba(26,24,18,0.88) 0%, rgba(26,24,18,0.72) 100%), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80') center/cover; }
+    .cta h2 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 18px; }
+    .cta p { color: rgba(255,255,255,0.82); max-width: 580px; margin: 0 auto 38px; }
+    .cta .hero-actions { justify-content: center; margin-bottom: 0; }
+
+    /* ===== Footer ===== */
+    footer { background: var(--ink); color: rgba(255,255,255,0.6); padding: 70px 5% 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+    .footer-brand .logo-text { color: var(--white); }
+    .footer-brand .logo-mark { background: var(--orange); color: var(--ink); }
+    .footer-brand p { margin: 20px 0; line-height: 1.8; }
+    .social-links { display: flex; gap: 14px; }
+    .social-links a { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: var(--orange); text-decoration: none; transition: all 0.3s; }
+    .social-links a:hover { background: var(--orange); color: var(--ink); }
+    .footer-col h4 { color: var(--white); font-size: 0.95rem; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 1.5px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 12px; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; text-align: center; font-size: 0.85rem; }
+
+    /* ===== WhatsApp float ===== */
+    .wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 1100; width: 60px; height: 60px; border-radius: 50%; background: #25D366; color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.7rem; text-decoration: none; box-shadow: 0 14px 30px rgba(37,211,102,0.5); animation: pulse 2.2s infinite; }
+
+    /* ===== Keyframes ===== */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes blobMove { 0%, 100% { border-radius: 48% 52% 60% 40% / 50% 45% 55% 50%; } 50% { border-radius: 60% 40% 45% 55% / 45% 55% 45% 55%; } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); } 70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+        .hero-inner { grid-template-columns: 1fr; }
+        .hero-visual { height: 420px; margin-top: 20px; }
+        .dish-row { grid-template-columns: repeat(3, 1fr); }
+        .about-grid, .info-grid { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+        .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    }
+    @media (max-width: 768px) {
+        .nav-links { display: none; }
+        .mobile-menu-btn { display: block; }
+        .nav-links.active { display: flex; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 26px 5%; gap: 18px; box-shadow: var(--shadow); }
+        .nav-cta .btn-pill.outline { display: none; }
+        .hero { padding: 130px 5% 50px; }
+        .hero-actions { flex-direction: column; }
+        .btn-pill { width: 100%; justify-content: center; }
+        .dish-row { grid-template-columns: 1fr 1fr; gap: 16px; }
+        .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        .gallery-item.tall, .gallery-item.wide { grid-row: span 1; grid-column: span 1; aspect-ratio: 1; }
+        .footer-grid { grid-template-columns: 1fr; }
+        section { padding: 70px 5%; }
+        .menu-banner-text { left: 24px; max-width: 80%; }
+        .floating-pin { right: 0; top: 4%; }
+        .menu-tabs-dropdown { left: 0; }
+    }
+    @media (max-width: 480px) {
+        .dish-row { grid-template-columns: 1fr; }
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .hero-stats { gap: 22px; }
+        .menu-tabs-dropdown.open { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <a href="#home" class="logo">
+        <div class="logo-mark"><i class="fas fa-pepper-hot"></i></div>
+        <div class="logo-text">NoorTaaj<span>Village</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="#apropos" data-i18n="nav_about">À Propos</a></li>
+        <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+        <li><a href="#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+        <div class="lang-switch">
+            <button id="langFr" onclick="setLanguage('fr')">FR</button>
+            <button id="langEn" onclick="setLanguage('en')">EN</button>
+        </div>
+        <a href="https://wa.me/243827000299?text=Bonjour%2C%20je%20voudrais%20r%C3%A9server%20une%20table." class="btn-pill outline small" data-i18n="nav_reserve"><i class="fas fa-phone"></i> Réserver</a>
+        <div class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <div class="badge-pill"><i class="fas fa-star"></i> <span data-i18n="hero_badge">4.6 / 5 — 116 avis Google</span></div>
+            <h1 data-i18n-html="hero_title">Cuisine<br><span class="accent">Indienne</span> Authentique à Kinshasa</h1>
+            <p class="hero-desc" data-i18n="hero_desc">Plus de 200 plats : biryanis parfumés, currys mijotés, naans tout droit sortis du tandoor et sucreries indiennes. Un voyage gustatif au cœur de l'Inde, en face du CMK Hospital.</p>
+            <p class="hero-location"><i class="fas fa-map-marker-alt"></i> <span data-i18n="hero_location">Avenue Bas-Congo, en face du CMK Hospital, Kinshasa</span></p>
+            <div class="hero-actions">
+                <a href="#menu" class="btn-pill primary"><i class="fas fa-utensils"></i> <span data-i18n="hero_btn_menu">Voir le Menu</span></a>
+                <a href="https://wa.me/243827000299?text=Bonjour%2C%20je%20voudrais%20commander." class="btn-pill outline"><i class="fab fa-whatsapp"></i> <span data-i18n="hero_btn_order">Commander</span></a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><strong data-count="116">0</strong><span data-i18n="hero_stat1">Avis Google</span></div>
+                <div class="hero-stat"><strong data-count-menu="1">0</strong><span data-i18n="hero_stat2">Plats au Menu</span></div>
+                <div class="hero-stat"><strong>7j/7</strong><span data-i18n="hero_stat3">Ouvert Midi & Soir</span></div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-blob"></div>
+            <div class="hero-ring"></div>
+            <i class="fas fa-leaf floating-leaf leaf-1"></i>
+            <i class="fas fa-mortar-pestle floating-leaf leaf-2"></i>
+            <div class="hero-photo-wrap">
+                <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=700&q=80" alt="Biryani indien">
+            </div>
+            <div class="floating-card">
+                <div class="ring">4.6</div>
+                <div><strong data-i18n="hero_float_strong">Excellent</strong><span data-i18n="hero_float_span">116 avis vérifiés</span></div>
+            </div>
+            <div class="floating-pin"><i class="fas fa-fire"></i> <span data-i18n="hero_pin">Cuisine Halal</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+    <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- Popular Dishes -->
+<section class="popular" id="populaires">
+    <div class="section-header reveal">
+        <div class="eyebrow" data-i18n="pop_eyebrow">Les préférés de nos clients</div>
+        <h2 data-i18n="pop_title">Nos Incontournables</h2>
+        <p data-i18n="pop_desc">Une sélection de nos plats signature, parmi plus de 200 références — commandés en un clic via WhatsApp.</p>
+    </div>
+    <div class="dish-row reveal" id="signatureGrid"></div>
+</section>
+
+<!-- Stats strip -->
+<div class="stats-strip">
+    <div class="stats-grid">
+        <div class="stat-box reveal"><strong data-count="116">0</strong><span data-i18n="stats1">Avis Google</span></div>
+        <div class="stat-box reveal"><strong><span data-count="4" data-decimal="6">0</span></strong><span data-i18n="stats2">Note Moyenne / 5</span></div>
+        <div class="stat-box reveal"><strong data-count-menu="1">0</strong><span data-i18n="stats3">Plats au Menu</span></div>
+        <div class="stat-box reveal"><strong data-count="21">0</strong><span data-i18n="stats4">Catégories de Plats</span></div>
+    </div>
+</div>
+
+<!-- About -->
+<section class="about" id="apropos">
+    <div class="about-grid reveal">
+        <div class="about-image-wrap">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=700&q=80" alt="Intérieur NoorTaaj Village">
+            </div>
+            <div class="about-badge">
+                <span class="number">4.6★</span>
+                <span class="text" data-i18n="about_badge_text">116 avis Google</span>
+            </div>
+        </div>
+        <div class="about-content">
+            <div class="eyebrow" data-i18n="about_eyebrow">Notre histoire</div>
+            <h3 data-i18n="about_title">L'Authenticité Indienne au Cœur de Kinshasa</h3>
+            <p data-i18n="about_p1">NoorTaaj Village vous invite à un voyage gustatif au cœur de l'Inde. Situé en face du CMK Hospital sur l'avenue Bas-Congo, notre restaurant allie tradition culinaire indienne et hospitalité chaleureuse dans une ambiance unique.</p>
+            <p data-i18n="about_p2">De nos biryanis parfumés à nos naans beurrés sortis du tandoor, chaque plat est préparé avec des épices authentiques et un savoir-faire ancestral. Avec plus de 200 références, notre carte couvre toutes les régions de l'Inde — du Pendjab au Gujarat.</p>
+            <div class="about-features">
+                <div class="feature-item"><i class="fas fa-utensils"></i> <span data-i18n="about_feat1">Cuisine Halal</span></div>
+                <div class="feature-item"><i class="fas fa-leaf"></i> <span data-i18n="about_feat2">Options Végé</span></div>
+                <div class="feature-item"><i class="fas fa-cut"></i> <span data-i18n="about_feat3">Salon de Coiffure</span></div>
+                <div class="feature-item"><i class="fas fa-wheelchair"></i> <span data-i18n="about_feat4">Accès PMR</span></div>
+            </div>
+            <a href="#menu" class="btn-pill primary"><i class="fas fa-utensils"></i> <span data-i18n="about_btn">Découvrir le Menu</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- Menu -->
+<section class="menu-section" id="menu">
+    <div class="section-header center reveal">
+        <div class="eyebrow" data-i18n="menu_eyebrow">Carte complète</div>
+        <h2 data-i18n="menu_title">Notre Menu</h2>
+        <p data-i18n="menu_desc">Plus de 200 plats répartis en 21 catégories — biryanis, currys, tandoor, pains, sucreries et boissons.</p>
+    </div>
+
+    <div class="menu-search reveal">
+        <i class="fas fa-search"></i>
+        <input type="text" id="menuSearch" data-i18n-placeholder="menu_search_ph" placeholder="Rechercher un plat...">
+    </div>
+
+    <div class="menu-tabs-wrap reveal">
+        <button class="menu-tabs-toggle" id="tabsToggle" onclick="toggleDropdown()"><i class="fas fa-bars"></i></button>
+        <div class="menu-tabs" id="menuTabs"></div>
+        <div class="menu-tabs-dropdown" id="menuDropdown"></div>
+    </div>
+
+    <div class="menu-banner reveal" id="menuBanner">
+        <img id="menuBannerImg" src="" alt="Catégorie">
+        <div class="menu-banner-text">
+            <h3 id="menuBannerTitle"></h3>
+            <p id="menuBannerDesc"></p>
+            <span class="menu-banner-count" id="menuBannerCount"></span>
+        </div>
+    </div>
+
+    <div class="menu-grid reveal" id="menuGrid"></div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="galerie">
+    <div class="section-header center reveal">
+        <div class="eyebrow" data-i18n="gallery_eyebrow">En images</div>
+        <h2 data-i18n="gallery_title">Galerie</h2>
+        <p data-i18n="gallery_desc">Un aperçu de nos plats et de notre ambiance chaleureuse.</p>
+    </div>
+    <div class="gallery-grid reveal">
+        <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80" alt="Biryani"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80" alt="Naan"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+        <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80" alt="Curry"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1606471191009-63994c53433b?w=600&q=80" alt="Tandoor"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Sweets"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+        <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant"><div class="overlay"><i class="fas fa-search-plus"></i></div></div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+    <div class="section-header center reveal">
+        <div class="eyebrow" data-i18n="services_eyebrow">Pourquoi nous choisir</div>
+        <h2 data-i18n="services_title">Nos Services</h2>
+        <p data-i18n="services_desc">Tout pour votre confort et votre satisfaction.</p>
+    </div>
+    <div class="services-grid reveal">
+        <div class="service-card"><div class="service-icon"><i class="fas fa-utensils"></i></div><h4 data-i18n="service1_title">Repas sur Place</h4><p data-i18n="service1_desc">Profitez d'une expérience culinaire complète dans notre salle climatisée et décorée avec soin.</p></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-car"></i></div><h4 data-i18n="service2_title">Service Drive</h4><p data-i18n="service2_desc">Commandez à l'avance et récupérez votre repas sans descendre de voiture.</p></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-motorcycle"></i></div><h4 data-i18n="service3_title">Livraison Rapide</h4><p data-i18n="service3_desc">Livraison rapide et sécurisée directement chez vous ou au bureau.</p></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-cut"></i></div><h4 data-i18n="service4_title">Salon de Coiffure</h4><p data-i18n="service4_desc">Un salon de coiffure à l'étage pour vous rafraîchir en attendant vos amis.</p></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-birthday-cake"></i></div><h4 data-i18n="service5_title">Événements Privés</h4><p data-i18n="service5_desc">Réservez notre espace pour vos anniversaires, réunions et célébrations.</p></div>
+        <div class="service-card"><div class="service-icon"><i class="fas fa-concierge-bell"></i></div><h4 data-i18n="service6_title">Buffet Non-Végé</h4><p data-i18n="service6_desc">Notre buffet varié avec une large sélection de plats non-végétariens.</p></div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+    <div class="section-header center reveal">
+        <div class="eyebrow" data-i18n="testi_eyebrow">Ils nous font confiance</div>
+        <h2 data-i18n="testi_title">Avis Clients</h2>
+        <p data-i18n="testi_desc">Ce que nos clients disent de nous.</p>
+    </div>
+    <div class="testimonials-track reveal">
+        <div class="testimonials-scroll" id="testimonialsScroll"></div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+    <div class="section-header reveal">
+        <div class="eyebrow" data-i18n="contact_eyebrow">Nous trouver</div>
+        <h2 data-i18n="contact_title">Informations & Contact</h2>
+    </div>
+    <div class="info-grid reveal">
+        <div class="info-content">
+            <div class="info-item"><div class="info-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4 data-i18n="info_address_label">Adresse</h4><p data-i18n-html="info_address_value">CMK Hospital, Av. Bas-Congo (Opp.),<br>Kinshasa, Congo-Kinshasa</p><a href="https://maps.app.goo.gl/LYThwZgPgR7Gktad6" target="_blank" class="maps-link"><span data-i18n="info_address_link">Voir sur Google Maps</span> <i class="fas fa-arrow-up-right-from-square"></i></a></div></div>
+            <div class="info-item"><div class="info-icon"><i class="fas fa-phone"></i></div><div><h4 data-i18n="info_phone_label">Téléphone</h4><a href="tel:+243827000299">+243 827 000 299</a></div></div>
+            <div class="info-item"><div class="info-icon"><i class="fab fa-whatsapp"></i></div><div><h4 data-i18n="info_wa_label">WhatsApp</h4><a href="https://wa.me/243827000299" target="_blank" data-i18n="info_wa_value">Commander directement</a></div></div>
+            <div class="info-item"><div class="info-icon"><i class="fas fa-clock"></i></div><div>
+                <h4 data-i18n="info_hours_label">Horaires d'ouverture</h4>
+                <table class="hours-table"><tr><td data-i18n="info_hours_days">Lundi — Dimanche</td><td>08:00 – 23:59</td></tr></table>
+            </div></div>
+            <div class="info-item"><div class="info-icon"><i class="fas fa-money-bill-wave"></i></div><div><h4 data-i18n="info_budget_label">Budget moyen</h4><p data-i18n="info_budget_value">15 000 – 35 000 CDF par personne</p></div></div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps?q=-4.3073119,15.3148865(NoorTaaj+Village)&z=17&output=embed"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="reveal">
+        <h2 data-i18n="cta_title">Réservez Votre Table</h2>
+        <p data-i18n="cta_desc">Venez découvrir l'authenticité de la cuisine indienne à Kinshasa. Nos équipes vous attendent pour un moment gastronomique inoubliable.</p>
+        <div class="hero-actions">
+            <a href="https://wa.me/243827000299?text=Bonjour%2C%20je%20voudrais%20r%C3%A9server%20une%20table%20pour%20___%20personnes%20le%20___." class="btn-pill primary" target="_blank"><i class="fab fa-whatsapp"></i> <span data-i18n="cta_btn1">Réserver sur WhatsApp</span></a>
+            <a href="https://www.instagram.com/ntvkin/" target="_blank" class="btn-pill ghost-light"><i class="fab fa-instagram"></i> <span data-i18n="cta_btn2">Suivre sur Instagram</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <a href="#" class="logo"><div class="logo-mark"><i class="fas fa-pepper-hot"></i></div><div class="logo-text">NoorTaaj<span>Village</span></div></a>
+            <p data-i18n="footer_desc">Sweets & Snacks Restaurant — L'authenticité de la cuisine indienne au cœur de Kinshasa. Des épices d'exception, un savoir-faire ancestral, une hospitalité sans pareille.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/ntvkin/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/243827000299" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-col"><h4 data-i18n="footer_nav_title">Navigation</h4><ul>
+            <li><a href="#home" data-i18n="nav_home">Accueil</a></li><li><a href="#apropos" data-i18n="nav_about">À Propos</a></li><li><a href="#menu" data-i18n="nav_menu">Menu</a></li><li><a href="#services" data-i18n="nav_services">Services</a></li>
+        </ul></div>
+        <div class="footer-col"><h4 data-i18n="footer_services_title">Services</h4><ul>
+            <li><a href="#" data-i18n="service1_title">Repas sur Place</a></li><li><a href="#" data-i18n="service3_title">Livraison</a></li><li><a href="#" data-i18n="service2_title">Drive</a></li><li><a href="#" data-i18n="service5_title">Événements</a></li>
+        </ul></div>
+        <div class="footer-col"><h4 data-i18n="footer_contact_title">Contact</h4><ul>
+            <li><a href="tel:+243827000299">+243 827 000 299</a></li><li><a href="#">Avenue Bas-Congo, Kinshasa</a></li><li><a href="#" data-i18n="footer_hours">Ouvert 7j/7 — 8h à 23h59</a></li>
+        </ul></div>
+    </div>
+    <div class="footer-bottom"><p data-i18n-html="footer_bottom">&copy; 2026 NoorTaaj Village. Tous droits réservés. | Conçu avec <i class="fas fa-heart" style="color: var(--orange);"></i> à Kinshasa</p></div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/243827000299?text=Bonjour%2C%20je%20voudrais%20commander." class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+const IMG = {
+    biryani: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe',
+    chickencurry: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8',
+    kebab: 'https://images.unsplash.com/photo-1606471191009-63994c53433b',
+    kebabgrill: 'https://images.unsplash.com/photo-1626323109252-0adb3b46692b',
+    naan: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7',
+    sweets: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8',
+    samosa: 'https://images.unsplash.com/photo-1601050690597-df0568f70950',
+    soup: 'https://images.unsplash.com/photo-1555126634-323283e090fa',
+    paneer: 'https://images.unsplash.com/photo-1631452180539-96aca7d48617',
+    dal: 'https://images.unsplash.com/photo-1505253758473-96b7015fcd40',
+    vegcurry: 'https://images.unsplash.com/photo-1627906296851-6d9c5e4db592',
+    mutton: 'https://images.unsplash.com/photo-1596797038530-2c107229654b',
+    egg: 'https://images.unsplash.com/photo-1587198059786-bbb540abb5e2',
+    fish: 'https://images.unsplash.com/photo-1574484284002-952d92456975',
+    noodles: 'https://images.unsplash.com/photo-1617622141675-d3005b9067c5',
+    pizza: 'https://images.unsplash.com/photo-1732223229355-95a1433404bf',
+    pasta: 'https://images.unsplash.com/photo-1553909489-cd47e0907980',
+    dosa: 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976',
+    salad: 'https://images.unsplash.com/photo-1623489254660-db5b367881d9',
+    lassi: 'https://images.unsplash.com/photo-1558113583-d75f23fcb8a9'
+};
+
+const menuData = [
+{ id:'starters', fr:'Entrées & Chaat', en:'Starters & Chaat', fdesc:'Samoussas, chaat et fritures croustillantes pour bien commencer.', edesc:'Samosas, chaat and crispy fritters to start things right.', img: IMG.samosa, items:[
+    {n:'Punjabi Samosa (1 pc)', p:2500},
+    {n:'Paneer Samosa (1 pc)', p:1500, tag:'veg'},
+    {n:'Veg Cocktail Samosa (1 pc)', p:1500, tag:'veg'},
+    {n:'Veg Spring Roll (1 pc)', p:1200, tag:'veg'},
+    {n:'Pani Puri (10 pc)', p:12000, tag:'veg'},
+    {n:'Dahi Puri (8 pc)', p:12000, tag:'veg'},
+    {n:'Sev Puri (8 pc)', p:12000, tag:'veg'},
+    {n:'Aloo Tikki Chaat (4 pc)', p:10000, tag:'veg'},
+    {n:'Aloo Chaat', p:8000, tag:'veg'},
+    {n:'Chana Dal Chaat', p:7000, tag:'veg'},
+    {n:'Chatpata Bhel', p:12000, tag:'veg'},
+    {n:'Dragon Potato', p:17000, tag:'veg spicy'},
+    {n:'Veg Crispy', p:16000, tag:'veg'},
+    {n:'Onion Pakoda (200g)', p:15000, tag:'veg'},
+    {n:'Paneer Pakoda (10 pc)', p:18000, tag:'veg popular'},
+    {n:'Cheese Pakoda (10 pc)', p:19000, tag:'veg'},
+    {n:'Veg Burger & Fries', p:10000, tag:'veg'}
+]},
+{ id:'nonveg-starters', fr:'Entrées Non-Végétariennes', en:'Non-Veg Starters', fdesc:'Kebabs et grillades non-végétariennes, marinés et cuits au tandoor.', edesc:'Marinated non-veg kebabs and grills, fired in the tandoor.', img: IMG.kebabgrill, items:[
+    {n:'Chicken Chilli Dry', p:25000, tag:'spicy'},
+    {n:'Chicken Lollipop (10 pc)', p:26000, tag:'popular'},
+    {n:'Chicken Tangdi Kabab + Fries (3 pc)', p:25000},
+    {n:'Chicken Malai Kali Mirch Tikka', p:28000},
+    {n:'Chicken Banjara Kabab', p:28000},
+    {n:'Chicken Tikka Dry (10 pc)', p:29000},
+    {n:'Mutton Seekh Kabab', p:32000, tag:'spicy'},
+    {n:'Fish Amritsari Tikka', p:28000},
+    {n:'Mix Kabab Platter', p:35000},
+    {n:'Mix Kabab Platter (Large)', p:80000, tag:'popular'},
+    {n:'Chicken Leg Piece (1 pc)', p:15000}
+]},
+{ id:'soups', fr:'Soupes', en:'Soups', fdesc:'Soupes chaudes, végétariennes ou au poulet, à la sauce chinoise-indienne.', edesc:'Hot soups, veg or chicken, Indo-Chinese style.', img: IMG.soup, items:[
+    {n:'Veg Manchow Soup', p:17000, tag:'veg'},
+    {n:'Tomato Soup', p:17000, tag:'veg'},
+    {n:'Lemon Coriander Soup', p:17000, tag:'veg'},
+    {n:'Chicken Manchow Soup', p:20000},
+    {n:'Chicken Hot & Sour Soup', p:20000, tag:'spicy'},
+    {n:'Chicken Sweet Corn Soup', p:20000}
+]},
+{ id:'paneer', fr:'Paneer & Spécialités Fromage', en:'Paneer & Cheese Specialties', fdesc:'Fromage frais paneer et sauces onctueuses à la noix de cajou.', edesc:'Fresh paneer cheese in rich cashew-based gravies.', img: IMG.paneer, items:[
+    {n:'Malai Kofta', p:25000, tag:'veg'},
+    {n:'Veg Kofta', p:23500, tag:'veg'},
+    {n:'Paneer Kofta', p:24000, tag:'veg'},
+    {n:'Kaju Curry', p:24000, tag:'veg'},
+    {n:'Kaju Butter Masala', p:25000, tag:'veg'},
+    {n:'Paneer Kaju Masala', p:25500, tag:'veg'},
+    {n:'Cheese Butter Masala', p:21000, tag:'veg'},
+    {n:'Cheese Paneer Masala', p:21000, tag:'veg'},
+    {n:'Cheese Kaju Butter Masala', p:25000, tag:'veg'},
+    {n:'Paneer Chilli (Dry or Gravy)', p:21000, tag:'veg'},
+    {n:'Paneer Tikka Dry', p:28000, tag:'veg popular'}
+]},
+{ id:'vegspecial', fr:'Spécialités Végétariennes', en:'Vegetarian Specialties', fdesc:'Currys de légumes et spécialités épicées façon Kathiyawadi (Gujarat).', edesc:'Vegetable curries and spicy Kathiyawadi (Gujarat) specialties.', img: IMG.vegcurry, items:[
+    {n:'Chana Masala', p:20000, tag:'veg popular'},
+    {n:'Aloo Mutter', p:20000, tag:'veg'},
+    {n:'Mix Veg', p:20000, tag:'veg'},
+    {n:'Bhindi Masala', p:20000, tag:'veg'},
+    {n:'Veg Chatpata', p:25000, tag:'veg spicy'},
+    {n:'Tomato Sev', p:15000, tag:'veg'},
+    {n:'Sev Onion', p:17000, tag:'veg'},
+    {n:'Dhokali Nu Shak', p:17000, tag:'veg'},
+    {n:'Mung Masala', p:15000, tag:'veg'},
+    {n:'Bharela Ringan', p:17000, tag:'veg'},
+    {n:'Aloo Baigan', p:15000, tag:'veg'},
+    {n:'Gathiya Masala', p:15000, tag:'veg'},
+    {n:'Dahi Thikari', p:15000, tag:'veg'}
+]},
+{ id:'dal', fr:'Dal (Lentilles)', en:'Dal (Lentils)', fdesc:'Lentilles mijotées, réconfortantes, à partager avec du riz ou du pain.', edesc:'Slow-simmered lentils, comforting, best shared with rice or bread.', img: IMG.dal, items:[
+    {n:'Dal Fry', p:16000, tag:'veg'},
+    {n:'Dal Tadka', p:16000, tag:'veg'},
+    {n:'Dal Palak', p:15000, tag:'veg'},
+    {n:'Gujarati Kadhi', p:15000, tag:'veg'},
+    {n:'Punjabi Pakoda Kadhi', p:16000, tag:'veg'}
+]},
+{ id:'chicken', fr:'Spécialités Poulet', en:'Chicken Specialties', fdesc:'Les grands classiques au poulet, mijotés dans des sauces riches en épices.', edesc:'The chicken classics, simmered in rich spiced gravies.', img: IMG.chickencurry, items:[
+    {n:'Butter Chicken', p:27000, tag:'popular'},
+    {n:'Chicken Kadhai', p:26000},
+    {n:'Chicken Do Pyaza', p:27000},
+    {n:'Chicken Kolhapuri', p:27000, tag:'spicy'},
+    {n:'Chicken Curry', p:28000},
+    {n:'Chicken Bhuna Masala', p:28500},
+    {n:'Chicken Chatpata', p:27000, tag:'spicy'},
+    {n:'Chicken Angara', p:27000, tag:'spicy'}
+]},
+{ id:'mutton', fr:'Spécialités Mouton', en:'Mutton Specialties', fdesc:'Agneau mijoté longuement, tendre et parfumé aux épices du Cachemire.', edesc:'Slow-cooked mutton, tender and fragrant with Kashmiri spices.', img: IMG.mutton, items:[
+    {n:'Mutton Kadhai', p:35000},
+    {n:'Mutton Rogan Josh', p:35000, tag:'popular'},
+    {n:'Mutton Masala', p:35000},
+    {n:'Mutton Kolhapuri', p:34000, tag:'spicy'},
+    {n:'Mutton Curry', p:35000},
+    {n:'Mutton Bhuna Masala', p:36000},
+    {n:'Mutton Angara', p:35000, tag:'spicy'}
+]},
+{ id:'egg', fr:'Spécialités Œufs', en:'Egg Specialties', fdesc:'Œufs mijotés en curry ou en omelette, simples et réconfortants.', edesc:'Eggs simmered in curry or as omelettes, simple and comforting.', img: IMG.egg, items:[
+    {n:'Egg Curry', p:18000},
+    {n:'Egg Keema', p:18000},
+    {n:'Egg Masala', p:20000},
+    {n:'Egg Moglai', p:24000},
+    {n:'Boiled Egg (1 pc)', p:3000},
+    {n:'Egg Bhurji', p:12000},
+    {n:'Plain Omelette', p:5000},
+    {n:'Cheese Omelette', p:6000},
+    {n:'Masala Omelette', p:6500}
+]},
+{ id:'fish', fr:'Poisson & Crevettes', en:'Fish & Prawns', fdesc:'Poisson et crevettes en sauce épicée ou grillés, fraîcheur garantie.', edesc:'Fish and prawns in spiced gravy or grilled, always fresh.', img: IMG.fish, items:[
+    {n:'Fish Masala', p:25000},
+    {n:'Fish Curry', p:25000},
+    {n:'Fish Kadai', p:26000},
+    {n:'Fish Fry', p:25000},
+    {n:'Amritsari Fish Curry', p:25000, tag:'popular'},
+    {n:'Prawn Masala', p:27000},
+    {n:'Prawn Kadai', p:27000},
+    {n:'Prawn Chilli Dry', p:33000, tag:'spicy'}
+]},
+{ id:'tandoor', fr:'Spécial Tandoor NTV', en:'NTV Tandoor Special', fdesc:'Notre sélection signature au four tandoor, marinades maison.', edesc:'Our signature tandoor selection, house marinades.', img: IMG.kebab, items:[
+    {n:'Paneer Achari Tikka (8 pc)', p:32000, tag:'veg'},
+    {n:'Paneer Hariyali Tikka (8 pc)', p:28000, tag:'veg'},
+    {n:'Paneer Reshmi Tikka (8 pc)', p:32000, tag:'veg'},
+    {n:'Veg Kandi Kabab (8 pc)', p:26000, tag:'veg'},
+    {n:'Veg Galouti Kabab (8 pc)', p:24000, tag:'veg'},
+    {n:'Mutton Tandoori Chaap (2 pc)', p:35000},
+    {n:'Mutton Shami Kabab (8 pc)', p:30000}
+]},
+{ id:'riceveg', fr:'Riz & Biryani Végétarien', en:'Veg Rice & Biryani', fdesc:'Riz parfumé, pulao et biryanis végétariens, basmati et épices entières.', edesc:'Fragrant rice, pulao and veg biryanis, basmati and whole spices.', img: IMG.biryani, items:[
+    {n:'Plain Rice', p:8000, tag:'veg'},
+    {n:'Jeera Rice', p:10000, tag:'veg'},
+    {n:'Veg Pulao', p:20000, tag:'veg'},
+    {n:'Veg Tawa Pulao', p:22000, tag:'veg'},
+    {n:'Veg Biryani', p:22000, tag:'veg popular'},
+    {n:'Veg Hyderabadi Biryani', p:24000, tag:'veg spicy'},
+    {n:'Veg Dum Biryani', p:22000, tag:'veg'},
+    {n:'Veg Handi Biryani', p:22000, tag:'veg'},
+    {n:'Paneer Biryani', p:25000, tag:'veg'},
+    {n:'Paneer Tikka Biryani', p:28000, tag:'veg'}
+]},
+{ id:'ricenonveg', fr:'Riz & Biryani Non-Végétarien', en:'Non-Veg Rice & Biryani', fdesc:'Nos biryanis signature au poulet, mouton, poisson et crevettes.', edesc:'Our signature biryanis with chicken, mutton, fish and prawns.', img: IMG.biryani, items:[
+    {n:'Chicken Biryani', p:29000, tag:'popular'},
+    {n:'Chicken Tikka Biryani', p:30000},
+    {n:'NTV Special Chicken Biryani', p:35000, tag:'popular'},
+    {n:'Hyderabadi Chicken Biryani', p:28000, tag:'spicy'},
+    {n:'Chicken Dum Biryani', p:30000},
+    {n:'Chicken Parda Biryani', p:30000},
+    {n:'Mutton Biryani', p:35000, tag:'popular'},
+    {n:'Fish Biryani', p:30000},
+    {n:'Prawn Biryani', p:32000},
+    {n:'Egg Biryani', p:24000},
+    {n:'Egg Pulao', p:22000},
+    {n:'Chicken Pulao', p:29000},
+    {n:'Mutton Pulao', p:30000}
+]},
+{ id:'bread', fr:'Pains Tandoor', en:'Tandoor Breads', fdesc:'Naans, rotis et parathas cuits minute au four tandoor.', edesc:'Naan, roti and paratha, baked fresh in the tandoor.', img: IMG.naan, items:[
+    {n:'Plain Tandoori Roti', p:2500, tag:'veg'},
+    {n:'Butter Tandoori Roti', p:3000, tag:'veg'},
+    {n:'Plain Tawa Roti', p:1000, tag:'veg'},
+    {n:'Butter Tawa Roti', p:1500, tag:'veg'},
+    {n:'Plain Tawa Paratha', p:3000, tag:'veg'},
+    {n:'Butter Tawa Paratha', p:3500, tag:'veg'},
+    {n:'Aloo Paratha', p:8000, tag:'veg'},
+    {n:'Gobi Paratha', p:8000, tag:'veg'},
+    {n:'Paneer Paratha', p:10000, tag:'veg'},
+    {n:'Cheese Paratha', p:11000, tag:'veg'},
+    {n:'Plain Naan', p:4500, tag:'veg'},
+    {n:'Butter Naan', p:4500, tag:'veg popular'},
+    {n:'Garlic Naan', p:4500, tag:'veg'},
+    {n:'Butter Kulcha', p:4500, tag:'veg'},
+    {n:'Cheese Kulcha', p:10000, tag:'veg'},
+    {n:'Paneer Kulcha', p:10000, tag:'veg'}
+]},
+{ id:'chinese', fr:'Cuisine Chinoise', en:'Chinese Cuisine', fdesc:'Nouilles et riz sautés façon indo-chinoise, version végé ou poulet.', edesc:'Indo-Chinese noodles and fried rice, veg or chicken.', img: IMG.noodles, items:[
+    {n:'Veg Hakka Noodles', p:20000, tag:'veg'},
+    {n:'Schezwan Noodles', p:21000, tag:'veg spicy'},
+    {n:'Manchurian Noodles', p:22000, tag:'veg'},
+    {n:'Veg Fried Rice', p:18000, tag:'veg'},
+    {n:'Manchurian Fried Rice', p:24000, tag:'veg'},
+    {n:'Chicken Noodles', p:25000},
+    {n:'Egg Noodles', p:23000},
+    {n:'Chicken Fried Rice', p:25000},
+    {n:'Egg Fried Rice', p:25000},
+    {n:'Triple Chicken Fried Rice', p:27000, tag:'popular'},
+    {n:'Chicken Schezwan Fried Rice', p:27000, tag:'spicy'}
+]},
+{ id:'pizza', fr:'Pizza', en:'Pizza', fdesc:'Pizzas au four, version végétarienne ou poulet, touche indienne.', edesc:'Oven-baked pizzas, veg or chicken, with an Indian twist.', img: IMG.pizza, items:[
+    {n:'Veg Pizza', p:27000, tag:'veg'},
+    {n:'Margherita Pizza', p:27000, tag:'veg'},
+    {n:'Italian Pizza', p:28000, tag:'veg'},
+    {n:'Paneer BBQ Pizza', p:29000, tag:'veg'},
+    {n:'NTV Special Pizza', p:35000, tag:'popular'},
+    {n:'Mexican Pizza', p:28000, tag:'veg spicy'},
+    {n:'Chicken Tikka Pizza', p:30000},
+    {n:'BBQ Chicken Pizza', p:32000},
+    {n:'Butter Chicken Pizza', p:32000, tag:'popular'}
+]},
+{ id:'pasta', fr:'Pâtes & Sandwichs', en:'Pasta & Sandwiches', fdesc:'Pâtes et sandwichs généreux, parfaits pour un repas rapide.', edesc:'Hearty pasta and sandwiches, perfect for a quick meal.', img: IMG.pasta, items:[
+    {n:'Veg Pasta', p:18000, tag:'veg'},
+    {n:'Chicken Pasta', p:18000},
+    {n:'Bread Butter', p:4500, tag:'veg'},
+    {n:'Veg Club Sandwich', p:12000, tag:'veg'},
+    {n:'Aloo Mutter Sandwich', p:12000, tag:'veg'},
+    {n:'Cheese Masala Sandwich', p:14000, tag:'veg'},
+    {n:'Chicken Sandwich', p:12000},
+    {n:'Chicken Cheese Sandwich', p:14000},
+    {n:'Chicken Tikka Sandwich', p:15000},
+    {n:'Chicken Kathi Roll', p:12000, tag:'popular'}
+]},
+{ id:'southindian', fr:'Indien du Sud', en:'South Indian', fdesc:'Dosa, uttapam et idli, spécialités du sud de l\'Inde.', edesc:'Dosa, uttapam and idli, specialties from South India.', img: IMG.dosa, items:[
+    {n:'Mysore Masala Dosa', p:20000, tag:'veg popular'},
+    {n:'Spring Masala Dosa', p:20000, tag:'veg'},
+    {n:'Plain Uttapam', p:17000, tag:'veg'},
+    {n:'Tomato Uttapam', p:17000, tag:'veg'},
+    {n:'Mix Uttapam', p:18000, tag:'veg'},
+    {n:'Onion Uttapam', p:18000, tag:'veg'},
+    {n:'Idli Sambhar (3 pc)', p:12000, tag:'veg'},
+    {n:'Wada Sambhar (3 pc)', p:12000, tag:'veg'},
+    {n:'Mendu Wada (3 pc)', p:12000, tag:'veg'}
+]},
+{ id:'sides', fr:'Accompagnements', en:'Sides & Accompaniments', fdesc:'Papad, raita et salade fraîche pour accompagner vos plats.', edesc:'Papad, raita and fresh salad to go with your meal.', img: IMG.salad, items:[
+    {n:'Roasted Papad', p:2000, tag:'veg'},
+    {n:'Fried Papad', p:2000, tag:'veg'},
+    {n:'Masala Papad', p:4000, tag:'veg'},
+    {n:'Veg Mix Raita', p:6000, tag:'veg'},
+    {n:'Boondi Raita', p:6000, tag:'veg'},
+    {n:'Green Salad', p:8000, tag:'veg'}
+]},
+{ id:'sweets', fr:'Douceurs Indiennes & Farshan', en:'Indian Sweets & Farshan', fdesc:'Sucreries et farshan du Gujarat, vendus au poids — parfait à emporter.', edesc:'Gujarati sweets and farshan, sold by weight — perfect to take home.', img: IMG.sweets, items:[
+    {n:'Gulab Jamun (1 kg)', p:58000, tag:'veg popular'},
+    {n:'Jalebi (100g / 250g)', p:'6 000 / 15 000', tag:'veg'},
+    {n:'Fafda (100g / 250g)', p:'6 000 / 15 000', tag:'veg'},
+    {n:'Laddu (250g / 500g / 1kg)', p:'14 500 / 29 000 / 58 000', tag:'veg'},
+    {n:'Mohnthal (250g / 1kg)', p:'11 750 / 47 000', tag:'veg'},
+    {n:'Kaju Sweet (250g / 500g / 1kg)', p:'17 650 / 35 250 / 70 500', tag:'veg'},
+    {n:'Mava Sweet (250g / 500g / 1kg)', p:'14 700 / 29 400 / 58 750', tag:'veg'},
+    {n:'Khaman (100g / 250g)', p:'6 000 / 15 000', tag:'veg'},
+    {n:'Khandvi (100g / 250g)', p:'6 000 / 15 000', tag:'veg'},
+    {n:'Patra (100g / 250g)', p:'6 000 / 15 000', tag:'veg'},
+    {n:'Surati Idada (100g / 250g)', p:'6 000 / 15 000', tag:'veg'},
+    {n:'Chorafali (250g / 1kg)', p:'15 000 / 58 000', tag:'veg'},
+    {n:'Sukhadi (250g)', p:14500, tag:'veg'},
+    {n:'Farshan Mix (250g / 1kg)', p:'9 000 / 34 500', tag:'veg'}
+]},
+{ id:'drinks', fr:'Boissons', en:'Beverages', fdesc:'Lassi, jus frais, thé, café et bières fraîches.', edesc:'Lassi, fresh juices, tea, coffee and cold beers.', img: IMG.lassi, items:[
+    {n:'Lassi', p:8000, tag:'veg'},
+    {n:'NTV Special Lassi', p:12000, tag:'veg popular'},
+    {n:'Limbu Soda', p:2500, tag:'veg'},
+    {n:'Limbu Sharbat', p:3000, tag:'veg'},
+    {n:'Falooda', p:12000, tag:'veg'},
+    {n:'Ice Gola', p:10000, tag:'veg'},
+    {n:'Sugarcane Juice', p:3000, tag:'veg'},
+    {n:'Black Tea', p:2000, tag:'veg'},
+    {n:'Milk Coffee', p:3000, tag:'veg'},
+    {n:'Cold Coffee', p:10000, tag:'veg'},
+    {n:'Soft Drink', p:'1 500 - 3 000', tag:'veg'},
+    {n:'Heineken Beer', p:6000},
+    {n:'Castel Beer', p:6000},
+    {n:'Tembo Beer', p:7000},
+    {n:'Nkoyi Beer', p:6000}
+]}
+];
+
+const signatureDishes = [
+    { n:'Chicken Biryani', img: IMG.biryani, p:29000, stars:5, time:'25-30 min', tag:'popular' },
+    { n:'Butter Chicken', img: IMG.chickencurry, p:27000, stars:5, time:'20-25 min', tag:'popular' },
+    { n:'Mutton Rogan Josh', img: IMG.mutton, p:35000, stars:5, time:'30-35 min', tag:'spicy' },
+    { n:'Paneer Tikka Dry', img: IMG.kebab, p:28000, stars:4, time:'18-22 min', tag:'veg' },
+    { n:'Punjabi Samosa', img: IMG.samosa, p:2500, stars:5, time:'10 min', tag:'veg' },
+    { n:'Mysore Masala Dosa', img: IMG.dosa, p:20000, stars:4, time:'15 min', tag:'veg' },
+    { n:'Gulab Jamun', img: IMG.sweets, p:58000, stars:5, time:'5 min', tag:'sweet' },
+    { n:'NTV Special Lassi', img: IMG.lassi, p:12000, stars:5, time:'5 min', tag:'veg' },
+    { n:'Mix Kabab Platter', img: IMG.kebabgrill, p:35000, stars:5, time:'25 min', tag:'popular' },
+    { n:'NTV Special Pizza', img: IMG.pizza, p:35000, stars:4, time:'20 min', tag:'popular' }
+];
+
+const i18n = {
+    fr: {
+        nav_home:'Accueil', nav_about:'À Propos', nav_menu:'Menu', nav_services:'Services', nav_contact:'Contact', nav_reserve:'Réserver',
+        hero_badge:'4.6 / 5 — 116 avis Google',
+        hero_title:'Cuisine<br><span class="accent">Indienne</span> Authentique à Kinshasa',
+        hero_desc:'Plus de 200 plats : biryanis parfumés, currys mijotés, naans tout droit sortis du tandoor et sucreries indiennes. Un voyage gustatif au cœur de l\'Inde, en face du CMK Hospital.',
+        hero_location:'Avenue Bas-Congo, en face du CMK Hospital, Kinshasa',
+        hero_btn_menu:'Voir le Menu', hero_btn_order:'Commander',
+        hero_stat1:'Avis Google', hero_stat2:'Plats au Menu', hero_stat3:'Ouvert Midi & Soir',
+        hero_float_strong:'Excellent', hero_float_span:'116 avis vérifiés', hero_pin:'Cuisine Halal',
+        marquee:['Cuisine Halal','Livraison Rapide','Buffet Non-Végé','Salon de Coiffure','Service Drive','Ouvert 7j/7'],
+        pop_eyebrow:'Les préférés de nos clients', pop_title:'Nos Incontournables',
+        pop_desc:'Une sélection de nos plats signature, parmi plus de 200 références — commandés en un clic via WhatsApp.',
+        label_order:'Commander',
+        badge_popular:'Populaire', badge_spicy:'Épicé', badge_sweet:'Sucré', badge_veg:'Végé',
+        stats1:'Avis Google', stats2:'Note Moyenne / 5', stats3:'Plats au Menu', stats4:'Catégories de Plats',
+        about_eyebrow:'Notre histoire', about_title:'L\'Authenticité Indienne au Cœur de Kinshasa',
+        about_p1:'NoorTaaj Village vous invite à un voyage gustatif au cœur de l\'Inde. Situé en face du CMK Hospital sur l\'avenue Bas-Congo, notre restaurant allie tradition culinaire indienne et hospitalité chaleureuse dans une ambiance unique.',
+        about_p2:'De nos biryanis parfumés à nos naans beurrés sortis du tandoor, chaque plat est préparé avec des épices authentiques et un savoir-faire ancestral. Avec plus de 200 références, notre carte couvre toutes les régions de l\'Inde — du Pendjab au Gujarat.',
+        about_feat1:'Cuisine Halal', about_feat2:'Options Végé', about_feat3:'Salon de Coiffure', about_feat4:'Accès PMR',
+        about_badge_text:'116 avis Google', about_btn:'Découvrir le Menu',
+        menu_eyebrow:'Carte complète', menu_title:'Notre Menu',
+        menu_desc:'Plus de 200 plats répartis en 21 catégories — biryanis, currys, tandoor, pains, sucreries et boissons.',
+        menu_search_ph:'Rechercher un plat...', menu_tab_all:'Tout',
+        menu_all_title:'Toute la Carte', menu_all_desc:'Biryanis, currys, tandoor, pains, sucreries et boissons — tout l\'univers de NoorTaaj Village.',
+        menu_count_suffix:'plats', no_results:'Aucun plat ne correspond à votre recherche.',
+        gallery_eyebrow:'En images', gallery_title:'Galerie', gallery_desc:'Un aperçu de nos plats et de notre ambiance chaleureuse.',
+        services_eyebrow:'Pourquoi nous choisir', services_title:'Nos Services', services_desc:'Tout pour votre confort et votre satisfaction.',
+        service1_title:'Repas sur Place', service1_desc:'Profitez d\'une expérience culinaire complète dans notre salle climatisée et décorée avec soin.',
+        service2_title:'Service Drive', service2_desc:'Commandez à l\'avance et récupérez votre repas sans descendre de voiture.',
+        service3_title:'Livraison Rapide', service3_desc:'Livraison rapide et sécurisée directement chez vous ou au bureau.',
+        service4_title:'Salon de Coiffure', service4_desc:'Un salon de coiffure à l\'étage pour vous rafraîchir en attendant vos amis.',
+        service5_title:'Événements Privés', service5_desc:'Réservez notre espace pour vos anniversaires, réunions et célébrations.',
+        service6_title:'Buffet Non-Végé', service6_desc:'Notre buffet varié avec une large sélection de plats non-végétariens.',
+        testi_eyebrow:'Ils nous font confiance', testi_title:'Avis Clients', testi_desc:'Ce que nos clients disent de nous.',
+        contact_eyebrow:'Nous trouver', contact_title:'Informations & Contact',
+        info_address_label:'Adresse', info_address_value:'CMK Hospital, Av. Bas-Congo (Opp.),<br>Kinshasa, Congo-Kinshasa',
+        info_address_link:'Voir sur Google Maps',
+        info_phone_label:'Téléphone', info_wa_label:'WhatsApp', info_wa_value:'Commander directement',
+        info_hours_label:'Horaires d\'ouverture', info_hours_days:'Lundi — Dimanche',
+        info_budget_label:'Budget moyen', info_budget_value:'15 000 – 35 000 CDF par personne',
+        cta_title:'Réservez Votre Table',
+        cta_desc:'Venez découvrir l\'authenticité de la cuisine indienne à Kinshasa. Nos équipes vous attendent pour un moment gastronomique inoubliable.',
+        cta_btn1:'Réserver sur WhatsApp', cta_btn2:'Suivre sur Instagram',
+        footer_desc:'Sweets & Snacks Restaurant — L\'authenticité de la cuisine indienne au cœur de Kinshasa. Des épices d\'exception, un savoir-faire ancestral, une hospitalité sans pareille.',
+        footer_nav_title:'Navigation', footer_services_title:'Services', footer_contact_title:'Contact', footer_hours:'Ouvert 7j/7 — 8h à 23h59',
+        footer_bottom:'&copy; 2026 NoorTaaj Village. Tous droits réservés. | Conçu avec <i class="fas fa-heart" style="color: var(--orange);"></i> à Kinshasa'
+    },
+    en: {
+        nav_home:'Home', nav_about:'About', nav_menu:'Menu', nav_services:'Services', nav_contact:'Contact', nav_reserve:'Reserve',
+        hero_badge:'4.6 / 5 — 116 Google reviews',
+        hero_title:'Authentic <span class="accent">Indian</span><br>Cuisine in Kinshasa',
+        hero_desc:'Over 200 dishes: fragrant biryanis, slow-cooked curries, naan straight from the tandoor and Indian sweets. A taste of India, right across from CMK Hospital.',
+        hero_location:'Avenue Bas-Congo, across from CMK Hospital, Kinshasa',
+        hero_btn_menu:'View Menu', hero_btn_order:'Order Now',
+        hero_stat1:'Google Reviews', hero_stat2:'Menu Items', hero_stat3:'Open Lunch & Dinner',
+        hero_float_strong:'Excellent', hero_float_span:'116 verified reviews', hero_pin:'Halal Cuisine',
+        marquee:['Halal Cuisine','Fast Delivery','Non-Veg Buffet','Hair Salon','Drive-Thru Service','Open 7 Days a Week'],
+        pop_eyebrow:'Customer Favorites', pop_title:'Our Must-Try Dishes',
+        pop_desc:'A selection of our signature dishes, out of more than 200 menu items — ordered in one click via WhatsApp.',
+        label_order:'Order',
+        badge_popular:'Popular', badge_spicy:'Spicy', badge_sweet:'Sweet', badge_veg:'Veg',
+        stats1:'Google Reviews', stats2:'Average Rating / 5', stats3:'Menu Items', stats4:'Menu Categories',
+        about_eyebrow:'Our Story', about_title:'Authentic Indian Flavors in the Heart of Kinshasa',
+        about_p1:'NoorTaaj Village invites you on a culinary journey to the heart of India. Located across from CMK Hospital on Avenue Bas-Congo, our restaurant blends Indian culinary tradition with warm hospitality in a unique setting.',
+        about_p2:'From fragrant biryanis to buttery tandoor naan, every dish is prepared with authentic spices and time-honored technique. With over 200 menu items, our menu spans every region of India — from Punjab to Gujarat.',
+        about_feat1:'Halal Cuisine', about_feat2:'Veg Options', about_feat3:'Hair Salon', about_feat4:'Wheelchair Access',
+        about_badge_text:'116 Google reviews', about_btn:'Discover the Menu',
+        menu_eyebrow:'Full Menu', menu_title:'Our Menu',
+        menu_desc:'Over 200 dishes across 21 categories — biryanis, curries, tandoor, breads, sweets and beverages.',
+        menu_search_ph:'Search a dish...', menu_tab_all:'All',
+        menu_all_title:'The Full Menu', menu_all_desc:'Biryanis, curries, tandoor, breads, sweets and beverages — the whole world of NoorTaaj Village.',
+        menu_count_suffix:'dishes', no_results:'No dish matches your search.',
+        gallery_eyebrow:'In Pictures', gallery_title:'Gallery', gallery_desc:'A glimpse of our dishes and warm atmosphere.',
+        services_eyebrow:'Why Choose Us', services_title:'Our Services', services_desc:'Everything for your comfort and satisfaction.',
+        service1_title:'Dine In', service1_desc:'Enjoy a complete culinary experience in our air-conditioned, carefully decorated dining room.',
+        service2_title:'Drive-Thru', service2_desc:'Order ahead and pick up your meal without leaving your car.',
+        service3_title:'Fast Delivery', service3_desc:'Fast, secure delivery straight to your home or office.',
+        service4_title:'Hair Salon', service4_desc:'A hair salon upstairs to freshen up while you wait for friends.',
+        service5_title:'Private Events', service5_desc:'Book our space for birthdays, meetings and celebrations.',
+        service6_title:'Non-Veg Buffet', service6_desc:'Our varied buffet with a wide selection of non-vegetarian dishes.',
+        testi_eyebrow:'They Trust Us', testi_title:'Customer Reviews', testi_desc:'What our customers say about us.',
+        contact_eyebrow:'Find Us', contact_title:'Information & Contact',
+        info_address_label:'Address', info_address_value:'CMK Hospital, Av. Bas-Congo (Opp.),<br>Kinshasa, Congo-Kinshasa',
+        info_address_link:'View on Google Maps',
+        info_phone_label:'Phone', info_wa_label:'WhatsApp', info_wa_value:'Order directly',
+        info_hours_label:'Opening Hours', info_hours_days:'Monday — Sunday',
+        info_budget_label:'Average Budget', info_budget_value:'15,000 – 35,000 CDF per person',
+        cta_title:'Reserve Your Table',
+        cta_desc:'Come discover the authenticity of Indian cuisine in Kinshasa. Our team is waiting to give you an unforgettable dining experience.',
+        cta_btn1:'Reserve on WhatsApp', cta_btn2:'Follow on Instagram',
+        footer_desc:'Sweets & Snacks Restaurant — The authenticity of Indian cuisine in the heart of Kinshasa. Exceptional spices, time-honored craft, unmatched hospitality.',
+        footer_nav_title:'Navigation', footer_services_title:'Services', footer_contact_title:'Contact', footer_hours:'Open 7 Days — 8am to 11:59pm',
+        footer_bottom:'&copy; 2026 NoorTaaj Village. All rights reserved. | Made with <i class="fas fa-heart" style="color: var(--orange);"></i> in Kinshasa'
+    }
+};
+
+const testimonialsData = [
+    { name:'Real Shots', guide:true, reviews:148, stars:5, quote:'The food is very good, so many variety, staff is also well behaved and mannerful. Also there is a salon upstairs — we can get fresh while waiting for friends to join us for the nice food. Thank you!!!' },
+    { name:'SK S', guide:true, reviews:133, stars:5, quote:'Food was very good, the staff was great, absolutely genuine rates for food and serving time was at bare minimum.' },
+    { name:'Aditya Patankar', guide:true, reviews:103, stars:5, quote:'Food was really good — had Dal Fry, Roti, Paneer Mutter, Dabeli, Chai, Sev Puri. The quantity of food was good too.' },
+    { name:'Yash Charaniya', guide:false, reviews:10, stars:5, quote:'The restaurant and the banquet hall are excellent. Wonderful food, served with all their hearts. Very organized and five-star deserved.' },
+    { name:'Samir Dhrolia', guide:true, reviews:17, stars:5, quote:'The best place to visit and relish your taste buds. Thank you for your hospitality and good service 😊👍' },
+    { name:'Ardinho Sa Majesté Suprême', guide:true, reviews:3, stars:5, quote:'De la très bonne cuisine ! Et un service très professionnel... 🥰' },
+    { name:'Prinscilla Patamu', guide:false, reviews:1, stars:5, quote:'Je ne suis pas en Inde mais je m\'y crois ! Livraison rapide, plats bien emballés. Les sucreries indiennes sont un délice absolu.' },
+    { name:'Hashim Khan', guide:true, reviews:71, stars:5, quote:'Tasty food and ambience — Indians who are missing the street food can go over there.' },
+    { name:'Ankur Basu', guide:true, reviews:135, stars:5, quote:'Lovely food, fantastic atmosphere and fantabulous staff.' },
+    { name:'Fakhir Malik', guide:false, reviews:2, stars:5, quote:'Amazing food. The staff and the waiters were very accurate and passionate about customer satisfaction. The Indian cuisine was exquisite — I really recommend everyone try this place.' },
+    { name:'Azim Dhanani', guide:false, reviews:1, stars:5, quote:'I really enjoyed & satisfied with your service and good food. Hope I will come again and will refer my friends too.' },
+    { name:'Kalpesh Trivedi', guide:false, reviews:10, stars:5, quote:'Amazing experience, wonderful — I just love NTV.' },
+    { name:'Joshi Pradip', guide:true, reviews:7, stars:5, quote:'Good food, good staff and good owner. Feeling so happy and enjoying the food.' },
+    { name:'Gédéon Keba Kufuku', guide:false, reviews:1, stars:5, quote:'C\'est bon 👍' }
+];
+
+let currentLang = 'fr';
+let currentCategory = 'all';
+let currentSearch = '';
+const totalMenuItems = menuData.reduce((sum, c) => sum + c.items.length, 0);
+
+function formatPrice(p) {
+    if (typeof p === 'number') return p.toLocaleString('fr-FR').replace(/,/g, ' ') + ' CDF';
+    return p + ' CDF';
+}
+
+function badgesHtml(tag) {
+    if (!tag) return '';
+    const t = i18n[currentLang];
+    let html = '';
+    if (tag.includes('popular')) html += `<span class="badge badge-popular">${t.badge_popular}</span>`;
+    if (tag.includes('spicy')) html += `<span class="badge badge-spicy">${t.badge_spicy}</span>`;
+    if (tag.includes('veg')) html += `<span class="badge badge-veg">${t.badge_veg}</span>`;
+    return html;
+}
+
+function waLink(name) {
+    const msg = encodeURIComponent('Bonjour, je voudrais commander : ' + name);
+    return `https://wa.me/243827000299?text=${msg}`;
+}
+
+function renderSignatureGrid() {
+    const t = i18n[currentLang];
+    const grid = document.getElementById('signatureGrid');
+    grid.innerHTML = signatureDishes.map(d => {
+        let tagBadge = '';
+        if (d.tag === 'popular') tagBadge = t.badge_popular;
+        else if (d.tag === 'spicy') tagBadge = t.badge_spicy;
+        else if (d.tag === 'sweet') tagBadge = t.badge_sweet;
+        else if (d.tag === 'veg') tagBadge = t.badge_veg;
+        const stars = '★'.repeat(d.stars) + '☆'.repeat(5 - d.stars);
+        return `
+        <div class="dish-card">
+            <div class="dish-card-img">
+                <img src="${d.img}?w=500&q=80" alt="${d.n}" loading="lazy">
+                <span class="dish-tag">${tagBadge}</span>
+            </div>
+            <div class="dish-card-body">
+                <h4>${d.n}</h4>
+                <div class="dish-meta"><span><i class="fas fa-clock"></i> ${d.time}</span><span class="stars">${stars}</span></div>
+                <div class="dish-footer">
+                    <span class="dish-price">${formatPrice(d.p)}</span>
+                    <a class="order-link" href="${waLink(d.n)}" target="_blank"><i class="fab fa-whatsapp"></i> ${t.label_order}</a>
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function starsHtml(n) {
+    const full = Math.floor(n);
+    const half = n - full >= 0.5;
+    let html = '';
+    for (let i = 0; i < full; i++) html += '<i class="fas fa-star"></i>';
+    if (half) html += '<i class="fas fa-star-half-alt"></i>';
+    for (let i = 0; i < 5 - full - (half ? 1 : 0); i++) html += '<i class="far fa-star"></i>';
+    return html;
+}
+
+function renderTestimonials() {
+    const reviewsLabel = currentLang === 'fr' ? 'avis' : 'reviews';
+    const cardHtml = testimonialsData.map(r => {
+        const meta = r.guide ? `Local Guide — ${r.reviews} ${reviewsLabel}` : `${r.reviews} ${reviewsLabel}`;
+        return `
+        <div class="testimonial-card">
+            <span class="quote-mark">"</span>
+            <div class="stars">${starsHtml(r.stars)}</div>
+            <p class="quote">"${r.quote}"</p>
+            <div class="testimonial-author">
+                <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(r.name)}&background=F4762A&color=fff" alt="${r.name}">
+                <div><h5>${r.name}</h5><span>${meta}</span></div>
+            </div>
+        </div>`;
+    }).join('');
+    document.getElementById('testimonialsScroll').innerHTML = cardHtml + cardHtml;
+}
+
+function renderMarquee() {
+    const items = i18n[currentLang].marquee;
+    const icons = ['fa-fire','fa-motorcycle','fa-concierge-bell','fa-cut','fa-car','fa-clock'];
+    const oneSet = items.map((txt, i) => `<span><i class="fas ${icons[i]}"></i> ${txt}</span>`).join('');
+    document.getElementById('marqueeTrack').innerHTML = oneSet + oneSet;
+}
+
+function renderMenuTabs() {
+    const t = i18n[currentLang];
+    const tabsEl = document.getElementById('menuTabs');
+    const dropdownEl = document.getElementById('menuDropdown');
+    let tabsHtml = `<button class="menu-tab ${currentCategory==='all'?'active':''}" data-cat="all" onclick="selectCategory('all')">${t.menu_tab_all}</button>`;
+    let dropHtml = `<button class="${currentCategory==='all'?'active':''}" data-cat="all" onclick="selectCategory('all')">${t.menu_tab_all}</button>`;
+    menuData.forEach(cat => {
+        const label = currentLang === 'fr' ? cat.fr : cat.en;
+        tabsHtml += `<button class="menu-tab ${currentCategory===cat.id?'active':''}" data-cat="${cat.id}" onclick="selectCategory('${cat.id}')">${label}</button>`;
+        dropHtml += `<button class="${currentCategory===cat.id?'active':''}" data-cat="${cat.id}" onclick="selectCategory('${cat.id}')">${label}</button>`;
+    });
+    tabsEl.innerHTML = tabsHtml;
+    dropdownEl.innerHTML = dropHtml;
+}
+
+function renderMenuBanner() {
+    const t = i18n[currentLang];
+    const img = document.getElementById('menuBannerImg');
+    const title = document.getElementById('menuBannerTitle');
+    const desc = document.getElementById('menuBannerDesc');
+    const count = document.getElementById('menuBannerCount');
+    if (currentCategory === 'all') {
+        img.src = IMG.biryani + '?w=1200&q=80';
+        title.textContent = t.menu_all_title;
+        desc.textContent = t.menu_all_desc;
+        count.textContent = totalMenuItems + ' ' + t.menu_count_suffix;
+    } else {
+        const cat = menuData.find(c => c.id === currentCategory);
+        img.src = cat.img + '?w=1200&q=80';
+        title.textContent = currentLang === 'fr' ? cat.fr : cat.en;
+        desc.textContent = currentLang === 'fr' ? cat.fdesc : cat.edesc;
+        count.textContent = cat.items.length + ' ' + t.menu_count_suffix;
+    }
+}
+
+function renderMenuGrid() {
+    const t = i18n[currentLang];
+    const grid = document.getElementById('menuGrid');
+    const search = currentSearch.trim().toLowerCase();
+    let categories = currentCategory === 'all' ? menuData : menuData.filter(c => c.id === currentCategory);
+    let html = '';
+    categories.forEach(cat => {
+        cat.items.forEach(item => {
+            if (search && !item.n.toLowerCase().includes(search)) return;
+            html += `
+            <div class="menu-card">
+                <div class="menu-card-header"><h4>${item.n}</h4><span class="price">${formatPrice(item.p)}</span></div>
+                <div class="menu-card-footer">
+                    <div class="menu-card-tags">${badgesHtml(item.tag)}</div>
+                    <a class="order-link" href="${waLink(item.n)}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>`;
+        });
+    });
+    grid.innerHTML = html || `<div class="no-results">${t.no_results}</div>`;
+}
+
+function renderMenu() {
+    renderMenuTabs();
+    renderMenuBanner();
+    renderMenuGrid();
+}
+
+function selectCategory(id) {
+    currentCategory = id;
+    document.getElementById('menuDropdown').classList.remove('open');
+    renderMenu();
+}
+
+function toggleDropdown() {
+    document.getElementById('menuDropdown').classList.toggle('open');
+}
+
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+}
+
+function applyStaticTranslations() {
+    const t = i18n[currentLang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    const searchInput = document.getElementById('menuSearch');
+    if (searchInput) searchInput.placeholder = t.menu_search_ph;
+    document.documentElement.lang = currentLang;
+}
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('ntv_lang', lang);
+    document.getElementById('langFr').classList.toggle('active', lang === 'fr');
+    document.getElementById('langEn').classList.toggle('active', lang === 'en');
+    applyStaticTranslations();
+    renderSignatureGrid();
+    renderMarquee();
+    renderTestimonials();
+    renderMenu();
+}
+
+function detectInitialLanguage() {
+    const saved = localStorage.getItem('ntv_lang');
+    if (saved === 'fr' || saved === 'en') return saved;
+    const nav = (navigator.language || navigator.languages?.[0] || 'fr').toLowerCase();
+    return nav.startsWith('fr') ? 'fr' : 'en';
+}
+
+// Navbar scroll
+window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Menu search
+document.addEventListener('input', function(e) {
+    if (e.target && e.target.id === 'menuSearch') {
+        currentSearch = e.target.value;
+        renderMenuGrid();
+    }
+});
+
+// Close dropdown on outside click
+document.addEventListener('click', function(e) {
+    const wrap = document.querySelector('.menu-tabs-wrap');
+    if (wrap && !wrap.contains(e.target)) {
+        document.getElementById('menuDropdown')?.classList.remove('open');
+    }
+});
+
+// Smooth scroll
+document.addEventListener('click', function(e) {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    const targetId = anchor.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.getElementById('navLinks').classList.remove('active');
+    }
+});
+
+// Scroll reveal
+function initReveal() {
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => revealObserver.observe(el));
+}
+
+// Counter animation
+function initCounters() {
+    document.querySelectorAll('[data-count-menu]').forEach(el => el.setAttribute('data-count', totalMenuItems));
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.count, 10);
+                const decimal = el.dataset.decimal;
+                let current = 0;
+                const step = Math.max(target / 40, 1);
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        el.textContent = decimal ? target + '.' + decimal : target;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current);
+                    }
+                }, 30);
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+}
+
+// Init
+currentLang = detectInitialLanguage();
+document.getElementById('langFr').classList.toggle('active', currentLang === 'fr');
+document.getElementById('langEn').classList.toggle('active', currentLang === 'en');
+applyStaticTranslations();
+renderSignatureGrid();
+renderMarquee();
+renderTestimonials();
+renderMenu();
+initReveal();
+initCounters();
+</script>
+</body>
+</html>
